@@ -4,7 +4,9 @@
   "description": "A learning and code snippet resource for earth / globes built with three.js / React Three Fiber",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,21 @@
   "bugs": {
     "url": "https://github.com/PaulieScanlon/react-three-fiber-earth/issues"
   },
-  "homepage": "https://github.com/PaulieScanlon/react-three-fiber-earth#readme"
+  "homepage": "https://github.com/PaulieScanlon/react-three-fiber-earth#readme",
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
