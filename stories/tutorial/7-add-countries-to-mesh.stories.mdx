@@ -1,0 +1,60 @@
+import { Meta } from '@storybook/addon-docs';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import { GeoJsonGeometry } from 'three-geojson-geometry';
+import { geoGraticule10 } from 'd3-geo';
+
+import SceneWrapper from './scene-wrapper';
+import ThreeGraticule from './three-graticule';
+import ThreeCountries from './three-countries';
+
+<Meta title="Tutorial/7. Add countries to mesh" />
+
+# Add Countries to Mesh
+
+1. Import and add `<ThreeCountries />` to mesh.
+
+```diff
+// three-mesh.js
+
+import React from 'react';
+
+import ThreeGraticule from './three-graticule'
++ import ThreeCountries from './three-countries'
+
+
+const ThreeMesh = () => {
+  return (
+    <mesh>
+      <sphereGeometry args={[1, 32]} />
+      <meshPhongMaterial color="#191919" transparent={true} opacity={0.8} />
+      <ThreeGraticule />
++     <ThreeCountries />
+    </mesh>
+  );
+};
+
+export default ThreeMesh;
+```
+
+<SceneWrapper>
+  <Canvas
+    camera={{
+      fov: 75,
+      position: [0, 0, 2.1]
+    }}
+    style={{
+      cursor: 'move'
+    }}
+  >
+    <OrbitControls enableRotate={true} enableZoom={false} enablePan={false} />
+    <ambientLight intensity={1.3} />
+    <pointLight position={[-10, -10, -10]} intensity={0.4} />
+    <mesh>
+      <sphereGeometry args={[1, 32]} />
+      <meshPhongMaterial color="#191919" transparent={true} opacity={0.8} />
+    </mesh>
+    <ThreeGraticule />
+    <ThreeCountries />
+  </Canvas>
+</SceneWrapper>

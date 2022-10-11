@@ -1,0 +1,25 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Tutorial/2. Create a mesh" />
+
+# Create a Mesh
+
+1. Create new component called `<ThreeMesh />`.
+2. Add a `<mesh>`, `<sphereGeometry />` and `<meshPhongMaterial />`.
+
+```javascript
+// three-mesh.js
+
+import React from 'react';
+
+const ThreeMesh = () => {
+  return (
+    <mesh>
+      <sphereGeometry args={[1, 32]} />
+      <meshPhongMaterial color="#191919" transparent={true} opacity={0.8} />
+    </mesh>
+  );
+};
+
+export default ThreeMesh;
+```
