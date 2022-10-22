@@ -8,7 +8,8 @@ const CodeBlock = ({ children, className }) => {
     <Highlight {...defaultProps} code={children} language={language} theme={theme}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
-          className={className}
+          // className={className}
+          className="border border-red-400"
           style={{
             margin: '16px 0',
             borderRadius: 8,

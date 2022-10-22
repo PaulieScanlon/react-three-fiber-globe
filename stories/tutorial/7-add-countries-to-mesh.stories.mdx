@@ -12,6 +12,28 @@ import ThreeCountries from './three-countries';
 
 # Add Countries to Mesh
 
+<SceneWrapper>
+  <Canvas
+    camera={{
+      fov: 75,
+      position: [0, 0, 2.1]
+    }}
+    style={{
+      cursor: 'move'
+    }}
+  >
+    <OrbitControls enableRotate={true} enableZoom={false} enablePan={false} />
+    <ambientLight intensity={1.3} />
+    <pointLight position={[-10, -10, -10]} intensity={0.4} />
+    <mesh>
+      <sphereGeometry args={[1, 32]} />
+      <meshPhongMaterial color="#191919" transparent={true} opacity={0.8} />
+    </mesh>
+    <ThreeGraticule />
+    <ThreeCountries />
+  </Canvas>
+</SceneWrapper>
+
 1. Import and add `<ThreeCountries />` to mesh.
 
 ```diff
@@ -36,25 +58,3 @@ const ThreeMesh = () => {
 
 export default ThreeMesh;
 ```
-
-<SceneWrapper>
-  <Canvas
-    camera={{
-      fov: 75,
-      position: [0, 0, 2.1]
-    }}
-    style={{
-      cursor: 'move'
-    }}
-  >
-    <OrbitControls enableRotate={true} enableZoom={false} enablePan={false} />
-    <ambientLight intensity={1.3} />
-    <pointLight position={[-10, -10, -10]} intensity={0.4} />
-    <mesh>
-      <sphereGeometry args={[1, 32]} />
-      <meshPhongMaterial color="#191919" transparent={true} opacity={0.8} />
-    </mesh>
-    <ThreeGraticule />
-    <ThreeCountries />
-  </Canvas>
-</SceneWrapper>

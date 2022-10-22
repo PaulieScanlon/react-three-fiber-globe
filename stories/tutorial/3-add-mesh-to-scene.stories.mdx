@@ -8,6 +8,26 @@ import SceneWrapper from './scene-wrapper';
 
 # Add Mesh to Scene
 
+<SceneWrapper>
+  <Canvas
+    camera={{
+      fov: 75,
+      position: [0, 0, 2.1]
+    }}
+    style={{
+      cursor: 'move'
+    }}
+  >
+    <OrbitControls enableRotate={true} enableZoom={false} enablePan={false} />
+    <ambientLight intensity={1.3} />
+    <pointLight position={[-10, -10, -10]} intensity={0.4} />
+    <mesh>
+      <sphereGeometry args={[1, 32]} />
+      <meshPhongMaterial color="#191919" transparent={true} opacity={0.8} />
+    </mesh>
+  </Canvas>
+</SceneWrapper>
+
 1. Import `<ThreeMesh />` and add to scene.
 
 ```diff
@@ -40,23 +60,3 @@ const ThreeScene = () => {
 
 export default ThreeScene;
 ```
-
-<SceneWrapper>
-  <Canvas
-    camera={{
-      fov: 75,
-      position: [0, 0, 2.1]
-    }}
-    style={{
-      cursor: 'move'
-    }}
-  >
-    <OrbitControls enableRotate={true} enableZoom={false} enablePan={false} />
-    <ambientLight intensity={1.3} />
-    <pointLight position={[-10, -10, -10]} intensity={0.4} />
-    <mesh>
-      <sphereGeometry args={[1, 32]} />
-      <meshPhongMaterial color="#191919" transparent={true} opacity={0.8} />
-    </mesh>
-  </Canvas>
-</SceneWrapper>

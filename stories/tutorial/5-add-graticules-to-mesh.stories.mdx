@@ -10,29 +10,6 @@ import SceneWrapper from './scene-wrapper';
 
 # Add Graticules to Mesh
 
-1. Import and add `<ThreeGraticule />` to mesh.
-
-```diff
-// three-mesh.js
-
-import React from 'react';
-
-+ import ThreeGraticule from './three-graticule'
-
-
-const ThreeMesh = () => {
-  return (
-    <mesh>
-      <sphereGeometry args={[1, 32]} />
-      <meshPhongMaterial color="#191919" transparent={true} opacity={0.8} />
-+     <ThreeGraticule />
-    </mesh>
-  );
-};
-
-export default ThreeMesh;
-```
-
 <SceneWrapper>
   <Canvas
     camera={{
@@ -57,3 +34,26 @@ export default ThreeMesh;
     </mesh>
   </Canvas>
 </SceneWrapper>
+
+1. Import and add `<ThreeGraticule />` to mesh.
+
+```diff
+// three-mesh.js
+
+import React from 'react';
+
++ import ThreeGraticule from './three-graticule'
+
+
+const ThreeMesh = () => {
+  return (
+    <mesh>
+      <sphereGeometry args={[1, 32]} />
+      <meshPhongMaterial color="#191919" transparent={true} opacity={0.8} />
++     <ThreeGraticule />
+    </mesh>
+  );
+};
+
+export default ThreeMesh;
+```
